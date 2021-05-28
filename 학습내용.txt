@@ -1,0 +1,112 @@
+학습 내용
+
+1. Database[DB] 사용 방법 학습
+    1. 용도 
+        데이터를 저장해서 활용 가능하게 하는 software
+        동시간 대에도 다수의 기기들이 접속해서 활용 가능하게 해주는 software
+        제약조건도 설정 가능(숫자만/문자만/데이터길이/F or M만 허용/중복불허...)
+
+    2. 사용 방법
+    sql 문장으로 소통
+
+    3. sql 로 할수 있는 내용
+        1. 데이터 저장  insert
+        2. 데이터 수정  update
+        3. 데이터 삭제  delete
+        3. 데이터 검색(매우 중요) - select
+        insert/select/update/delete/
+
+        CRUD
+    
+    4. 용어
+        1. DataBase[db] - 데이터
+        2. RDBMS - 관계형데이터베이스시스템
+                - oracle과 같은 제품의미
+                - database를 사용가능하게 해 주는 시스템
+        3. 참고 :  Db = RDBMS = DataBase등을 혼용해서 사용함
+
+
+2. DB 벤더사
+        오라클 벤더사 : oracle DB / mysql DB
+            교육용 DB는 일반 user(end user)가 사용 불가능한 학습용 DB일뿐
+                관리자급의 id가 이미 셋팅: system
+                설치시에 입력한 데이터는 pw 하나! : MANAGER
+
+        MS 벤더사 : MS sql
+        IBM 벤더사 : DB2
+        Monty Program AB : Mariadb(비용 저렴)
+        국내산 : 큐브리드
+        ...
+        스마트 기기 : sqllite
+        web 브라우저 : 
+        ...
+
+3. 학습 방식
+    1. oracle db 사용
+    2. sql문장 실습 tool
+            - 설치시에 sqlplus라는 소통 tool 자동 설치
+            - 도스창(커멘드) 실습
+    
+4. 현업 작업 방식
+        1. 요구사항 도출 -> 데이터 구조 정리 -> 데이터 실 저장 구조로 설계(데이터베이스 모델링)
+        -> 설계한 내용을 기반으로 실제 DB에 사용 가능한 sql문장으로 개발(백업, 권장 확장자 *.sql)
+        -> db에 적용 -> DB의 내용을 사용 가능하게 Application 개발해서 CRUD으로 서비스
+    
+5. 실습 방식
+    1단계 -  oracle db 실행
+
+     2단계 -  oracle db 접속
+            db의 접속 id/pw 필수(admin 계정)
+            >sqlplus system/MANAGER
+
+            * 실제 CRUD작업은 end user 사용 간으하게 하기 위한 데이터 활용
+            따라서 관리자 계정이 아닌 일반 user(개발자들이 사용 가능한) 계정 생성해서 활용 권장
+
+
+    3단계 -  sql 문장으로 CRUD 작업
+            1단계 : 존재하는 구조(table)로 부터 데이터 검색
+                oracle db가 기본적으로 제공해주는 데이터 사용
+
+            2단계 : 존재하는 구조(table)(저장/수정/삭제)
+            3단계 : table 생성 및 삭제(제약조건 설정)
+
+            4단계 : PLSQL(oracle 자체 개발 언어)
+                oracle db 자체의 함수들 존재
+                PL SQL 능하시면 오라클 db에 사용자 정의 함수 개발이 가능
+
+            
+
+     4단계 -  접속해제
+
+6. 실습한 sql문장
+
+    1. admin 계정으로 db 접속
+        cmd/sqlplus system/manager
+        
+    2. admin이 일반 SCOTT계정 생성 및 사용 가능한 table과 insert 로직 한 문장 실행
+        SQL> C:\oraclexe\app\oracle\product\11.2.0\server\rdbms\admin
+
+    3. 실제 실습하게 되는 id/pw
+        >sqlplus SCOTT/TIGER
+
+    4. 실습 table 구조
+        1. emp - 사원 정보
+            사번empno / 사원명ename / 직무 job / 내상사의사번mgr / 입사일 hiredate/ 월급여 sal
+            / 특별상여금채comm(영업부 사원만 존재 확인 가능)
+            / 부서번호 deptno
+        
+        2. dept - 부서 정보
+            부서번호/부서명/부서위치
+            deptno/dname/loc
+
+        emp와 dept의 관계는 연결되어 있음
+        - dept table의 deptno라는 부서 번호값을 emp table의 deptno가 참조
+        - 주종 관계
+            dept가 주(부모)
+            emp가 종(자식)
+        
+7. 필수 암기 용어
+    1. table
+    2. column - 세로, 속성
+    3. row(튜플,record) - 가로, 가령 사원한명의 모든 정보/한 부서의 모든 정보를 하나의 row로 처리
+    
