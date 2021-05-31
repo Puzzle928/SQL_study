@@ -49,7 +49,8 @@ order by 절 ;
 		  
 --1. sqlplus창 보기 화면 여백 조절 편집 명령어
 	-- 단순 sqlplus tool만의 편집 명령어
-	-- 영구 저장 안됨. sqlplus 실행시마다 해 줘야 함
+	-- 영구 저장 안됨. sqlplus 실행시마다 
+해 줘야 함
 set linesize 200
 set pagesize 200
  

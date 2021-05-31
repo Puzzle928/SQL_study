@@ -31,6 +31,34 @@
             교육용 DB는 일반 user(end user)가 사용 불가능한 학습용 DB일뿐
                 관리자급의 id가 이미 셋팅: system
                 설치시에 입력한 데이터는 pw 하나! : MANAGER
+            설치시에 window의 path 라는 항목에 자동으로 등록
+                - 경로 상관없이 sqlplus.exe 실행 가능
+                    >sqlplus ID/pw
+                0 exe 는 window의 실행 프로그램
+
+            *tip
+                - 개인 노트북인 경우 oracle db를 미사용시에는 중지
+                - oracle db는 설치 후에 path등록 후 window 인 경우 os자체가 시작되면 자동 실행
+                    : 간혹 실행이 자동 중지될 경우도 있긴 함
+
+                -? 질문
+                    하나의 시스템에 오라클 db 설치 개수는 여러개 가능
+                    설치시에 구분을 위해서는 port 번호 구분 & 별칭(회사에서 결정)부여 해서 구분
+
+                - 오라클로 end user들에게 서비스 시
+                    - 기업에서 end user들에게 서비스 하기 위한 db들은 oracle 사에서 비싼 돈 주고 구매 상용db
+
+                - 오라클 교육용  
+                    ~XE 라는 용어 포함
+                    11gXE - 설치시에 별도로 별칭 부여없이 XE라는 이름으로 db 사용  
+                    - 설치시에 별칭 부여 옵션 없이 XE로만 설치
+
+            *** 관리의 중요성
+            - 오라클 db가 정상으로 실행중 여부 확인
+
+            1. window 메뉴중 "서비스" 앱
+            2. OracleServcieXE & OracleXETNSListener 두가지
+                - 정상 실행이 되어야만 Application 활용 가능
 
         MS 벤더사 : MS sql
         IBM 벤더사 : DB2
