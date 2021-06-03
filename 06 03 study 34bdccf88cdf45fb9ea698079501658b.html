@@ -1,0 +1,694 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>06/03 study</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="34bdccf8-8cdf-45fb-9ea6-98079501658b" class="page sans"><header><h1 class="page-title">06/03 study</h1></header><div class="page-body"><p id="238c9fc0-b4e1-4a15-9fc8-4b81ed91d687" class="">
+</p><p id="b788f435-3ad5-4706-8126-c07ace79828b" class="">SQL 7. DDL</p><p id="a92df0b1-f95d-4501-82a4-7e252c016dea" class="">
+</p><p id="2573955f-38b2-4895-a07c-7d16d7ea95d1" class="">table 생성 명령어!!!</p><p id="dfaf59f4-75a8-4e6f-aa47-4b61d961fea5" class="">
+</p><p id="b3bdb7b3-4d5e-4858-b9ef-6c6c25eb0b07" class=""><strong>create table table명(</strong></p><p id="a7903eb8-caff-4af1-b37f-4b99a316a0cf" class="">칼럼명1 칼럼타입[사이즈) (제약조건)</p><p id="2a7de688-4299-42ee-a500-cf0e0d7cbf52" class="">칼럼명...</p><p id="7d5cd412-3e30-484b-8319-2e14292dfc2c" class="">
+</p><p id="ff19cc37-c26a-4f99-84a7-15ca16b59019" class="">table 삭제 명령어</p><p id="4cf46e6a-b7f0-413c-badd-23c25a042b30" class=""><strong>drop table table명;</strong></p><p id="29d08918-17f3-4a7f-b36b-c5d8e575415d" class="">
+</p><p id="20255593-5d63-4c40-ac45-b598cba09408" class="">
+</p><p id="9bbf736b-e028-432d-a6ac-76d66bb41f83" class="">table 구조 수정 명령어</p><p id="e6150135-c809-4db2-9ee6-1fc7bef0f237" class="">alter table table명 ..</p><p id="707f7554-558d-41f4-9353-56153a41cb8f" class="">
+</p><ul id="014b5dd1-3844-4e00-bfa0-d70b3c9bfaa4" class="bulleted-list"><li>- 불필요한 table 정리</li></ul><p id="e2944a8a-f230-4d9b-9089-53f25685f778" class="">purge recyclebin;</p><p id="8424f7a5-743c-4922-ad39-1f6494c6335d" class="">
+</p><p id="c4dea143-0e36-43f3-a7ad-4accbb3a7b09" class="">
+</p><p id="7f038107-8fa9-4199-9908-a40ba57960ac" class="">1.name(varchar2(20byte)), age(number(3)) 칼럼 보유한 people table 생성</p><p id="2c274854-e13b-4202-a1d7-3fce41362906" class=""><strong>create table people</strong>(</p><p id="b8c9d4af-6dfe-490a-8f29-80e04f65c31f" class="">name varchar2(20),</p><p id="96a85553-f04a-4c49-b11a-be1ce01da839" class="">age number(2)</p><p id="9b7088d7-cf48-49fc-80b4-89c03b2c31bb" class="">);</p><p id="69d0285b-c0c6-48ee-b8c3-4fcd48bd137f" class="">
+</p><p id="fd3b4d95-e463-459a-a3e6-90a787f2e2ee" class="">(이미 존재하는 table기반으로 생성)</p><p id="f04d110c-892b-4a1a-a200-57b8f0420f07" class="">
+</p><p id="b736f7b7-23bd-46b1-a6e9-dde606db75d8" class="">create table emp01 <strong>as select * from emp;</strong></p><p id="edb0261b-60e4-4bee-afc7-ad42448cb856" class="">
+</p><p id="b62d0647-2092-4db8-830d-864eee15b111" class="">
+</p><p id="a7a8fab4-cedb-4cab-bda2-09d1eb6f582d" class="">데이터 insert없이 table 구조로만 새로운 emp04 table생성시</p><ul id="8b61b6b2-4d5f-49fc-8292-a6867f8e9bd7" class="bulleted-list"><li>- 사용되는 조건식 : where=거짓</li></ul><p id="3a289f7b-df9a-45dc-b827-aaa2295347d5" class="">
+</p><p id="2f0f89f9-d176-4c5b-841f-838f2b6a09b4" class="">create table emp04 as select * from emp<strong> where 1=0;</strong></p><p id="9fed6819-afd5-4366-bc14-2b228707593d" class="">
+</p><p id="2cb220c9-754a-417f-91fe-871b290706c1" class="">이미 데이터를 보유한 table에 새로운 job칼럼 추가 가능</p><ul id="fe2a44ae-eab3-4a23-b2e6-6efd1ea44bbf" class="bulleted-list"><li>-<strong> add()</strong> : 컬럼 추가 함수</li></ul><p id="6c5214c3-175c-4c25-97c9-d0098d264369" class="">
+</p><p id="7791c0df-ba36-4891-993c-d4c9f3dc5b63" class="">create table emp01 as select empno, ename from emp;</p><p id="231c9515-21f3-4d07-8c49-d8922b16b272" class="">
+</p><p id="62fba84a-3137-454c-848c-b6a0dafe902a" class="">alter table emp01 <strong>add</strong> (job varchar2(10));</p><p id="2c4b23ce-d804-4f82-808c-f49184179398" class="">
+</p><p id="4a58c12c-1cf8-425a-ac41-ce96f3f01e3a" class="">modify(컬러명 타입(크기))</p><p id="8beefe40-2aee-48f5-91db-a3c11fbb56f7" class="">
+</p><p id="c6b47452-d9cc-49db-af9e-b0fb65f628e2" class="">alter table emp01 <strong>modify</strong>(job varchar2(20));</p><p id="47e46898-e64c-4754-bf60-015e07401386" class="">
+</p><p id="e420e6e6-4a68-41e6-96ef-0ae94a0e0638" class="">
+</p><p id="28b6b0fe-90f1-46ab-a9b0-01d348145a38" class="">칼럼 삭제</p><p id="593a2461-eabc-4d74-9636-f2942bebbbec" class="">alter table emp01 <strong>drop column job;</strong></p><p id="e959b393-2de4-455b-8a39-4fad34359a4f" class="">
+</p><p id="c14536b4-6c89-4fc8-84ae-1f9d7276658b" class="">table 이름 변경</p><p id="b43e3797-0064-499c-8e75-6f17acb56ca1" class="">
+</p><p id="cddad6eb-0213-4ffc-8256-b306e4f82221" class=""><strong>rename</strong> emp01 to test01;</p><p id="60c618f5-e98c-4fe5-b183-09d077e76497" class="">
+</p><p id="1fb6381f-b268-463a-8241-c9133b0a3e5d" class="">순수 데이터만 완벽하게 삭제하는 명령어</p><p id="ebc19f45-5b78-4483-91b3-539a9d8a5172" class="">
+</p><p id="5a393f60-3bfc-4c48-a825-fbaf94ee9081" class=""><strong>truncate</strong> table test01; </p><p id="4b38c2b2-4623-469e-83df-4d85f1b646a1" class="">rollback; -- 의미없음</p><p id="8f09865b-2f41-4315-a1f0-0388714e025d" class="">
+</p><p id="ceec86b0-1f00-498b-a3a4-47da49c8f509" class="">
+</p><p id="fc623bbb-fe9d-4133-8a33-8944b780f563" class=""><strong>8. DML</strong></p><p id="2eb9dd83-a4ad-40ca-9ac5-ddd8aac442a9" class="">select/insert/update/delete 모두 다 DML)</p><p id="557fa1a4-71ec-4ab8-80c1-1ed910f183e4" class="">- 이미 존재하는 table에 데이터 저장, 수정, 삭제, 검색</p><p id="b7754d28-317b-452a-b990-9b9bbc508d41" class="">
+</p><p id="938c948b-d357-4097-8f97-e2f214ae60b9" class="">insert sql문법</p><p id="b8fca7e5-a5d6-481f-bf68-19b3ce6dd45f" class="">모든 칼럼에 데이터 저장시</p><p id="69821746-2b6d-464b-9c1d-4ca4cc330bb2" class="">insert into table명 values(데이터값1, ...)</p><p id="c513dc28-f139-47ce-b514-3fc2247fba43" class="">
+</p><p id="e65e351e-aba0-4868-a0da-7e27373e3686" class="">
+</p><p id="45e8284a-ecf1-47de-b1b1-071cf4c07d81" class="">특정 칼럼에만 데이터 저장시,</p><p id="b6e3d872-1481-4744-adc1-b32174eacdd6" class="">insert into table명 (칼럼명1, ...) values(칼럼과매핑될데이터1...)</p><p id="0ea2c00d-7556-44d1-8ce4-c7e1711dc37c" class="">
+</p><p id="98f0eb7a-cfbd-4b6a-80a6-d6234b95f67a" class="">하나의 sql문장으로 다수의 table에 데이터 입력 방법</p><p id="cf87741e-9624-4b5a-9b45-dd032719ce0f" class="">
+</p><p id="c988aa86-c4f5-4ffb-8155-fb6acc939264" class="">
+</p><p id="e54a86c8-23c9-49ea-bcdc-aa83ae406b26" class="">insert all</p><p id="aa7aa02d-39a1-422a-bf32-a2a3c1ccc6bf" class="">into table명 [(칼럼명,...)] values(데이터,,,)</p><p id="13ba1955-e83f-4c69-9631-ef035dd0b37e" class="">select 검색칼럼 from....;</p><p id="934ebac3-dbb6-4d11-82d5-dd0ab31380ff" class="">
+</p><p id="74d140f0-81b0-41fd-abe9-5c7ceb6561be" class="">
+</p><p id="ba9fdb3e-bd5e-4d83-9c35-48a65b02b654" class="">update</p><p id="77687453-5af3-4119-a322-2fd9fa5604e3" class="">모든 table(다수의 row)의 데이터 한번에 수정</p><p id="381a87c3-f6be-4508-885d-0dc196d56859" class="">- where조건문 없는 문장</p><p id="d9774c84-b4b1-4440-99a1-5f9c6104f034" class="">-<strong> update table명 set 칼럼명=수정데이타;</strong></p><p id="7e157fbc-0fd5-4355-a05f-7f2bf244fcc1" class="">
+</p><p id="e45917ad-2892-4492-97c3-79cfbbf7c151" class="">
+</p><p id="35d7ba1d-4b8c-4803-9615-e8dd41aa1720" class="">table의 모든 데이터 삭제</p><p id="0a48a59c-eb18-4fd3-9c8e-715671d99895" class=""><strong>delete from table명;</strong></p><p id="ae878eb5-5491-43bb-bf8f-55130751bd13" class="">
+</p><p id="68a6adce-4a18-499b-a116-d3361e32262b" class="">
+</p><p id="ff44318a-6275-48a2-bea3-76852ac04c75" class=""><strong>merge(병합)</strong></p><p id="acd464e0-8c32-424b-96bc-7d87021629af" class="">merge into <strong>병합받을table명</strong> 별칭</p><p id="1c331767-462d-411d-8809-d5baeb19b73e" class="">using <strong>이미데이터를보유한table명</strong> 별칭</p><p id="da2d5a1c-93e6-4747-bc95-e413b3de60cc" class="">on <strong>조건식 (병합받을table.기준컬럼=데이터를제공할table.컬럼)</strong></p><p id="528a977a-93d4-48ad-896a-53dcd301f50f" class="">when matched then</p><p id="16640ec3-ec97-462e-9675-5ad7480cce9b" class="">true인 경우 실행(update)</p><p id="be65d935-e048-4794-9226-5618ee4657ad" class="">when not matched then</p><p id="2f5ec248-93e0-4448-8cb7-a202bd9f8f8e" class="">false인 경우 실행(insert)</p><p id="07d5ec9d-7663-40eb-9368-24ff9668fc05" class="">
+</p><p id="455f1442-4f7e-4134-93bd-ebecac1261d5" class="">
+</p><p id="573eebad-e350-4754-924f-12716940a6a4" class="">emp01 table의 모든 사원의 급여를 10%(sal*1.1) 인상하기</p><p id="5d6833d9-c36e-4ebb-973c-bf900b01c7a6" class="">
+</p><p id="52cc9d6d-9b9d-4c68-a026-0ad7beab7848" class=""><strong>update emp01 set sal=sal*1.1;</strong></p><p id="b6d14680-bcf9-4b84-b96c-520a30d38905" class="">
+</p><p id="5fa641af-4102-43cf-9525-afb10928cfe8" class="">emp01 table 사원의 급여가 1000이상인 사원들의 급여만 500원씩 삭감</p><p id="ef4799a2-4931-4a40-a69d-c36e4914549f" class="">
+</p><p id="271802b7-14ac-493b-affb-5fa86f8e922c" class=""><strong>update emp01 set sal=sal-500 where sal &gt;= 1000;</strong></p><p id="f2070396-2e21-4220-8300-fddcc488c0e9" class="">
+</p><p id="747081c5-af47-4b5f-9d74-3666f273f4bb" class="">
+</p><p id="933cebb1-7c11-41be-8618-80e0d0e42afe" class="">
+</p><p id="e910c5ff-0aa0-4471-8d9d-44ced61a3934" class=""><strong>update emp01</strong></p><p id="67f7aac5-541b-489a-85be-44e38d705b97" class=""><strong>set sal=sal+1000</strong></p><p id="5f23f868-6e82-4cd6-9343-99409416ff51" class=""><strong>where deptno=(select deptno</strong></p><p id="f05e8263-0229-43ba-8698-a1435e72b7db" class=""><strong>from dept</strong></p><p id="3a568a42-4ae2-4a25-951f-c0fe95f290ac" class=""><strong>where loc=&#x27;DALLAS&#x27;);</strong></p><p id="a1154207-f37e-424c-9ca0-795c4d1afa13" class="">
+</p><p id="35c367d7-7799-43e7-9912-1a8957f7eed2" class="">특정 row 삭제(where 조건식 기준)</p><p id="ee432f2f-76cb-45eb-b8e8-ca4e8d262856" class="">
+</p><p id="6bc47a1d-ec8c-45a4-a7e7-9f0dc51eec95" class=""><strong>delete from emp01 where deptno=30;</strong></p><p id="ced96e34-9f0f-4207-aa4a-b690ac351dbe" class="">
+</p><p id="4a4a26e7-c848-40af-bcfe-0123c9f65cc8" class="">emp01 table에서 comm 존재 자체가 없는(null) 사원만 모두 삭제</p><p id="09bb429f-8948-4ccf-a23c-a49d19f5d28f" class="">
+</p><p id="43fa2abe-3315-451c-9e02-6384cf49cf17" class=""><strong>delete from</strong> emp01 where comm is null;</p><p id="50e1804d-8687-4930-9287-e4f5b6ae937c" class="">
+</p><p id="a6e34d40-be14-40da-ac5d-38517cc71e0b" class="">emp01 table에서 comm이 null이 아닌 사원 모두 삭제</p><p id="f3d964cc-c202-4cff-a8b6-9634052d59dc" class="">
+</p><p id="c5df3b9d-5335-41f8-a70d-2dbf69e3463f" class=""><strong>delete from</strong> emp01 where comm is not null;</p><p id="4722450a-7a4a-4212-92d1-92e2a0db434e" class="">
+</p><p id="629e4ab5-baa3-4764-9647-ac12f5a85524" class="">delete from emp01</p><p id="9a168e46-d1a1-40ee-bdf4-ece5fc70d3db" class="">where deptno=(select deptno</p><p id="0bd259c7-ef80-4860-9d25-c84a9b65af99" class="">from dept</p><p id="b5d42f77-23cb-4143-a2d4-ed79209ec5fd" class="">where dname=&#x27;RESEARCH&#x27;);</p><p id="4185091e-d0ca-4228-99f1-561c53cc404f" class="">
+</p><p id="fbb0c4cc-0eae-4884-86ec-24500d9521c9" class="">emp01 table에서 부서명이 RESEARCH 부서에 소속된 사원 삭제</p><p id="72cef585-5a83-4f2f-903b-3674b0b8347d" class=""><strong>delete from emp0</strong>1</p><p id="c78ecf59-92a8-46eb-8522-4ddb63dd4700" class="">where deptno=(select deptno</p><p id="135b6a0d-7e9b-443a-998b-ff2742181752" class="">from dept</p><p id="d8b68918-b151-4540-81ac-67443fc72fe2" class="">where dname=&#x27;RESEARCH&#x27;);</p><p id="95b8fae2-8b96-4348-a879-c50af46f8781" class="">
+</p><p id="b7aaf6dd-f345-4f49-bbc6-04524d1bf125" class="">9.  integrity.sql</p><p id="d602f16f-cd7d-4d79-aaf5-7be5b4d660da" class="">dept의 deptno(pk)를 emp의 deptno(fk)가 참조해서 활용</p><p id="aa2b27cc-026f-486e-9052-0ecdb7a751e1" class="">
+</p><p id="6189acf0-5b7a-4d86-a6ee-f3059704b535" class="">emp의 deptno는 dept의 deptno에서 없던 데이터 사용은 불가</p><p id="0965af42-44ed-465c-b357-c302b491cdfb" class="">
+</p><p id="0f89a105-bb20-486a-b24a-583afa84961f" class="">alter table 테이블명 add constraint 제약조건명 제약조건(컬럼명);</p><p id="aeb1cb0c-ee0e-485d-a201-fe557c516929" class="">alter table dept01 add constraint dept01_deptno_pk primary key(deptno);</p><p id="a05f9ea5-cf7d-4818-bff4-a108e3c0f1ae" class="">
+</p><p id="97ca9dd7-26f8-48b9-86d1-241dceedf455" class="">
+</p><p id="f798719e-34ac-4ea9-a102-4c0a6469f328" class="">제약조건 삭제(drop)</p><p id="ee9ab906-c05d-41cf-a98d-94cb71796024" class="">- table삭제</p><p id="85da32e5-bc6a-49f9-83fd-f99212f5d5cd" class="">alter table 테이블명 cascade constraint;</p><p id="5ff8015e-8297-40ef-ac64-93bf2c682b22" class="">
+</p><p id="57ff7eca-a84e-41e4-a483-2c96e36c4b1b" class="">select * from user_constraints;</p><p id="d88061ca-450c-45a8-8f0c-a05510c09a0f" class="">desc user_constraints;</p><p id="d9aa525f-54f7-435e-b365-e80ea3a80688" class="">
+</p><p id="57837cc7-0a5a-4c56-a72d-c5a55138fc74" class="">create  table emp02(</p><p id="f54c263c-059f-47a1-baa8-39c509c4935b" class="">empno number(4),</p><p id="e80a3d88-d1d4-4376-a61e-404d514a37d4" class="">ename varchar2(10)</p><p id="10f28151-b56f-4dde-b504-46e6a5aeef05" class="">);</p><p id="aba7d7f3-dda9-4abc-9d20-d150e96267b4" class="">not null에 해당하는 경우에 한해서만 제약조건명 명시 안해도 괜찮음</p><p id="70a29aba-536b-400b-8ba5-ec112ec8c3ad" class="">create  table emp02(</p><p id="7e28da8f-93a2-4ff5-9d32-5162b08055f9" class="">empno number(4) constraint emp02_empno_nn not null,  -- 컬럼레벨방식</p><p id="354883a9-db69-4032-aeaa-13fee5bd7d77" class="">ename varchar2(10)</p><p id="a4806942-36bf-459d-b495-a9f553ff3ecf" class="">
+</p><p id="d82cfb20-e5f4-4fcc-8a8a-dd34154984c0" class="">컬럼 레벨 단위의 unique</p><p id="ca49f3c3-1208-4c8a-ae38-f23543847bd3" class="">create table emp01(</p><p id="fc349f10-b5ed-4541-b39d-2fd8ca2b56ca" class="">empno number(4) constraint emp01_empno_u unique,</p><p id="8b54312e-2627-4845-9733-8b1343b2760c" class="">ename varchar2(20) not null</p><p id="911b5368-d51c-452e-9ae3-fcc121dffd46" class="">);</p><p id="2bca2002-3552-4260-813c-0b28333d40b9" class="">
+</p><p id="c2ca81a9-018c-4dc7-a568-69e1f9b1e2bf" class="">table 레벨 단위의 제약조건 설정 방식 ?</p><p id="8d2e9337-2b4e-43ad-b953-fec4383768dc" class="">
+</p><p id="f66a5a70-a6d7-4a09-af13-6b5885005567" class="">drop table emp01;</p><p id="0a663446-0745-434d-8319-745ab5127507" class="">create table emp01(</p><p id="f589c7ed-3a3e-48f8-b177-874cfc2dfcd7" class="">empno number(4),</p><p id="2ae6d775-ec6c-4862-b2a3-d2de3b0d1a70" class="">ename varchar2(20) not null,</p><p id="31dc435d-3660-4118-8b1b-f5c516dee439" class="">constraint emp01_empno_u unique (empno)</p><p id="f15ced9c-4204-4454-a3a0-6e7977ac2a3b" class="">
+</p></div></article></body></html>
